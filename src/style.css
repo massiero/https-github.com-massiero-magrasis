@@ -1,0 +1,292 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #e9f5f5;
+    padding: 50px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.sobre, .beneficios, .planos, .contato, .calculadora {
+    padding: 50px 0;
+}
+
+.sobre h2, .beneficios h2, .planos h2, .contato h2, .calculadora h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sobre p, .sobre ul {
+    margin-bottom: 20px;
+}
+
+.sobre ul li {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.beneficio-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.beneficio-item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.plano-item {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.plano-item h3 {
+    margin-bottom: 15px;
+}
+
+.plano-item ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plano-item ul li {
+    margin-bottom: 10px;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contato form input, .contato form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contato form textarea {
+    height: 150px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.calculadora .container {
+    max-width: 600px;
+}
+
+.calculadora-item {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+.calculadora-item h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.calculadora-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.calculadora-item input, .calculadora-item select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.calculadora-item button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+.calculadora-item button:hover {
+    background-color: #0056b3;
+}
+
+.calculadora-item p {
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#resultados {
+    margin-top: 20px;
+}
+
+.btn-dicas {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-dicas:hover {
+    background-color: #218838;
+}
+
+#tabela-dicas {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+#tabela-dicas h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#tabela-dicas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabela-dicas th, #tabela-dicas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tabela-dicas th {
+    background-color: #f2f2f2;
+}

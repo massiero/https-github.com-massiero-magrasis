@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagraSis - Seu Sistema de Emagrecimento</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MagraSis</h1>
+            <nav>
+                <ul>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="calculadora" class="calculadora">
+        <div class="container">
+            <h2>Calculadora de Emagrecimento</h2>
+            <div class="calculadora-item">
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" placeholder="Ex: 1.75">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" placeholder="Ex: 70">
+                 <label for="idade">Idade:</label>
+                <input type="number" id="idade" placeholder="Ex: 30">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                <label for="atividade">Nível de Atividade:</label>
+                <select id="atividade">
+                    <option value="1.2">Sedentário</option>
+                    <option value="1.375">Levemente Ativo</option>
+                    <option value="1.55">Moderadamente Ativo</option>
+                    <option value="1.725">Muito Ativo</option>
+                    <option value="1.9">Extremamente Ativo</option>
+                </select>
+                 <label for="meta-peso">Meta de Peso (kg):</label>
+                <input type="number" id="meta-peso" placeholder="Ex: 60">
+                 <label for="tempo-meta">Tempo para Meta (meses):</label>
+                <input type="number" id="tempo-meta" placeholder="Ex: 3">
+                 <label for="novo-atividade">Novo Nível de Atividade:</label>
+                <select id="novo-atividade">
+                    <option value="1.2">Sedentário</option>
+                    <option value="1.375">Levemente Ativo</option>
+                    <option value="1.55">Moderadamente Ativo</option>
+                    <option value="1.725">Muito Ativo</option>
+                    <option value="1.9">Extremamente Ativo</option>
+                </select>
+                <button onclick="calcularTudo()">Calcular</button>
+                <div id="resultados">
+                    <p id="resultado-imc"></p>
+                     <p id="resultado-tmb"></p>
+                    <p id="resultado-gasto"></p>
+                    <p id="resultado-deficit"></p>
+                </div>
+                 <button onclick="mostrarDicas()" class="btn-dicas" id="btn-dicas" style="display: none;">O que devo consumir</button>
+                 <div id="tabela-dicas" style="display: none;">
+                    <h3>Alimentos Recomendados</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alimento (por porção)</th>
+                                <th>Calorias</th>
+                                <th>Porções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-caloria="82.5">
+                                <td>Frango grelhado (50g)</td>
+                                <td>82.5</td>
+                                <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="35">
+                                <td>Arroz branco (1 colher de sopa)</td>
+                                <td>35</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                            <tr data-caloria="78">
+                                <td>Ovo cozido (1 unidade)</td>
+                                <td>78</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                            <tr data-caloria="40">
+                                <td>Feijão cozido (1 colher de sopa)</td>
+                                <td>40</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                            <tr data-caloria="137">
+                                <td>Bife de gado (50g)</td>
+                                <td>137</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="100">
+                                <td>Aveia em flocos (1 colher de sopa)</td>
+                                <td>100</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                            <tr data-caloria="50">
+                                <td>Banana (1 unidade)</td>
+                                <td>50</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="150">
+                                <td>Cerveja 350ml</td>
+                                <td>150</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                            <tr data-caloria="140">
+                                <td>Refrigerante 350ml</td>
+                                <td>140</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="20">
+                                <td>Açucar (1 colher de sopa)</td>
+                                <td>20</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="60">
+                                <td>Leite (100ml)</td>
+                                <td>60</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="37">
+                                <td>Bolacha salgada (1 unidade)</td>
+                                <td>37</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="42">
+                                <td>Bolacha doce (1 unidade)</td>
+                                <td>42</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                             <tr data-caloria="70">
+                                <td>Fatia de pão (1 fatia)</td>
+                                <td>70</td>
+                                 <td><input type="number" value="0" min="0" class="porcoes-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Total de calorias: <span id="total-calorias">0</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MagraSis. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script  src="/src/main.js"></script>
+</body>
+</html>
